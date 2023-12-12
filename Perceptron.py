@@ -1,4 +1,7 @@
+from FormulasMath import sigmoid, summation
+
 import random
+
 
 
 class Perceptron:
@@ -37,6 +40,9 @@ class Perceptron:
 
 if __name__=="__main__":
 
+
+    print(summation(lambda xw: None, [(2,2),(3,0),(1,2)]))
+
     """
     A: A Nara fazendo comida?
     B: A Nara no celular?
@@ -49,27 +55,6 @@ if __name__=="__main__":
     C = 8
 
     wList = [A,B,C]
-
-    perceptron = Perceptron()
-    perceptron.training(1000)
-
-    print(f"score:{perceptron.score} th:{perceptron.threshold}")
-
-    while True:
-            try:
-                A = int(input("Você ama a nara fazendo comida?"))
-                B = int(input("Você ama a nara pelo celular?"))
-                C = int(input("Você ama a nara safadinha?"))
-                
-                hasLoveForNara = perceptron.output(wList, [A,B,C], perceptron.threshold)
-
-                if hasLoveForNara:
-                    print("Você ama a Nara! <3")
-                else:
-                    print("Que triste! :(")
-            except:
-                print("Repita a questão.")
-    
 
 
 
